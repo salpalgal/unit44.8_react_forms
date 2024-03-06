@@ -60,6 +60,7 @@ const NewBoxForm = ({addBox})=>{
             value={formData.color}
             onChange={handleChange}
             /> 
+            {}
             <button>Sumbit</button>
 
         </form>

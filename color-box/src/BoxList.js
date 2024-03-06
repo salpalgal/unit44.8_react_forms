@@ -4,21 +4,27 @@ import NewBoxForm from "./NewBoxForm"
 import {v4 as uuid} from "uuid"
 
 
+
 const BoxList = ()=>{
-    const initial = [{width:"",heigth:"",color:""}]
+    const initial = [{width:"",height:"",color:""}]
     
     const [boxes ,setBoxes]= useState(initial);
     const addBox = (newBox)=>{
         setBoxes(boxes=>[...boxes,{...newBox, id:uuid()}])
     }
+    const RemoveBox = id=>{
+        setBoxes(boxes => boxes.filter(box=> box.id !== id))
+    }
+    const allBoxs = boxes.map(({width,height,color,id})=> 
+    <Box width={width} height={height} color={color} id={id} handleRemove={RemoveBox}/>)
+    
 
 return (
     <div>
-        <h2>Box List</h2>
         <NewBoxForm addBox={addBox} />
-        <div>
-            {boxes.map(({width,height,color})=> <Box width={width} height={height} color={color} />)}
-        </div>
+        {allBoxs}
+        
+            
         {/* // <Box width={100} height={100} color="darkgreen" /> */}
     </div>
 )

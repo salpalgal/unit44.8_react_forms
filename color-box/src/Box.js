@@ -4,19 +4,20 @@ import React, {userState} from "react"
 
 
 
-const Box = ({width,height,color})=>{
-    console.log(width)
-    console.log(height)
-    console.log(color)
+
+const Box = ({width=10, height=10,color="blue",id,handleRemove})=>{
+  
+    const remove = ()=>handleRemove(id)
     return (
-        
-        <div 
-            style={{
-            width: `${width}px`,
-            height: `${width}px`,
-            backgroundColor : color, 
-        }}>
-       
+        <div>
+            <div 
+                style={{
+                width: `${width}em`,
+                height: `${height}em`,
+                backgroundColor : color, 
+            }}>
+            </div>
+            <button onClick={remove}>X</button>
         </div>
     )
 }
