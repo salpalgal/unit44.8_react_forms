@@ -5,7 +5,8 @@ const Todo = ({task,removeTask,id})=>{
     // const remove = ()=>handleRemove(id)
     return (
         <div>
-            {task} <button onClick={remove}>X</button>
+            <li>{task}</li>
+            <button onClick={remove}>X</button>
         </div>
     )
 }

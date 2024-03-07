@@ -1,10 +1,10 @@
 import React , {useState} from "react"
 import Todo from "./Todo";
-import NewTodoForm from "./NewTdoForm";
+import NewTodoForm from "./NewTodoForm";
 import {v4 as uuid} from "uuid"
 
 const TodoList = ()=>{
-    const initial = [{task: ""}];
+    const initial = [];
 
     const [tasks, setTasks] = useState(initial);
 

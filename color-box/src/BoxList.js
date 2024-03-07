@@ -6,9 +6,9 @@ import {v4 as uuid} from "uuid"
 
 
 const BoxList = ()=>{
-    const initial = [{width:"",height:"",color:""}]
     
-    const [boxes ,setBoxes]= useState(initial);
+    
+    const [boxes ,setBoxes]= useState([]);
     const addBox = (newBox)=>{
         setBoxes(boxes=>[...boxes,{...newBox, id:uuid()}])
     }
